@@ -1,0 +1,50 @@
+﻿@model VirtualShop.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <h1 class="text-danger">Details</h1>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 p-3">
+            Category
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.LogoUrl)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            <img class="img-thumbnail" width="40" src="/model => model.LogoUrl" />
+        </dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+

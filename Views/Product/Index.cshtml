@@ -1,0 +1,98 @@
+﻿@model IEnumerable<VirtualShop.Models.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+
+
+
+
+
+<div class="container bg-secondary mt-2">
+    <div class="row">
+        <div class="px-3">
+            <br />
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Slug)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Brand)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stock)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Category)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="p-2">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <h4 class ="text-danger">
+                                Available Products
+                            </h4>
+                        </div>
+                        <div class=" col-lg-2">
+                            <a asp-action="Create" class="btn btn-danger btn-sm text-secondary float-end ">
+                                <i class="fa fa-plus"></i>
+                                Add New
+                            </a>
+                        </div>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="/@(item.ImageUrl)" class="icon" width="60" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Slug)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Brand)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Stock)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" class="fa fa-edit text-muted" asp-route-id="@item.Id"> Edit</a> |
+                                <a asp-action="Details" class="fa fa-list text-muted" asp-route-id="@item.Id"> Details</a> |
+                                <a asp-action="Delete" class="fa fa-trash" asp-route-id="@item.Id"> Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

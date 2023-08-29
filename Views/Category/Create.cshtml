@@ -1,0 +1,65 @@
+﻿@using VirtualShop.Models;
+@model VirtualShop.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container bg-secondary">
+    <h1>Create</h1>
+
+</div>
+
+
+
+
+<div class="container bg-secondary">
+    <div class="row">
+        <div class="col-md-4 px-3">
+            <h3 class="fa fa-plus p-2">Add Category</h3>
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group p-2">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group p-2">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group p-2">
+                    <label asp-for="Type" class="control-label"></label>
+
+                    <select asp-for="Type" class="form-control">
+
+                        @foreach (CategoryType item in Enum.GetValues(typeof(CategoryType)))
+                        {
+                            <option value="@item.ToString()">@item.ToString()</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                <div class="form-group p-3 form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
+                    </label>
+                </div>
+                <div class="form-group p-2">
+                    <label asp-for="Logo" class="control-label"></label>
+                    <input asp-for="Logo" type="file" class="form-control" />
+                    <span asp-validation-for="Logo" class="text-danger"></span>
+                </div>
+                <div class="form-group p-2">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+            <div class="p-2">
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+

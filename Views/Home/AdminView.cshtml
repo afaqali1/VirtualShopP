@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@await Html.PartialAsync("~/Views/Shared/Admin/_DailyInsights.cshtml")
+<!-- Sale & Revenue End -->
+<!-- Sales Chart Start -->
+@await Html.PartialAsync("~/Views/Shared/Admin/_Charts.cshtml")
+<!-- Sales Chart End -->
+<!-- Recent Sales Start -->
+@await Html.PartialAsync("~/Views/Shared/Admin/_RecentSales.cshtml")
+<!-- Recent Sales End -->
+<!-- Widgets Start -->
+@await Html.PartialAsync("~/Views/Shared/Admin/_Widgets.cshtml")
+<!-- Widgets End -->

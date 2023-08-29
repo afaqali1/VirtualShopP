@@ -1,0 +1,56 @@
+﻿@using VirtualShop.Models;
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_ClientLayout";
+}
+
+
+<div class="container-fluid pt-4 px-4">
+
+    <div class="row g-4">
+
+        <div class="col-sm-12 col-xl-4">
+            
+        </div>
+        
+        <div class="col-sm-12 col-xl-4">
+            <div class="border m-3 p-5" style="border-radius:10px">
+
+                <div class="bg-primary p-3 mb-5" style="border-radius:10px">
+                    <div>
+                        <h1 class="text-center">Login</h1>
+                    </div>
+                </div>
+                <div>
+                    <form asp-action="Index">
+                        <div class="form-group">
+                            <label class="control-label col-md-3"></label>
+                            <div class="">
+                                <input type="text" class="form-control" style="border-radius:10px" placeholder="Email" asp-for="Email" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3"></label>
+                            <div class="">
+                                <input type="text" class="form-control" style="border-radius:10px" placeholder="Password" asp-for="Password" required />
+                            </div>
+                        </div>
+
+
+                        <input type="submit" class="btn btn-white border form-control" style="border-radius:10px" value="Login" />
+                        <div class="d-flex justify-content-center"><a href="/Accounts/Create" class="text-primary">Don't have an account? Sign up</a></div>
+                    </form>
+                </div>
+            </div>
+           
+            
+            
+        </div>
+
+        <div class="col-sm-12 col-xl-4">
+            
+        </div>
+
+    </div>
+</div>
